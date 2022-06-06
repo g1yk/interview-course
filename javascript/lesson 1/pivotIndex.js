@@ -1,5 +1,5 @@
 function pivotIndex(nums) {
-    if (nums.length == 0) return -1;
+    if (nums.length === 0) return -1;
         
     const sums = [nums[0]];
     for (let i = 1; i < nums.length; i++) {
@@ -7,8 +7,8 @@ function pivotIndex(nums) {
     }
 
     for (let i = 0; i < sums.length; i++) {
-        const left = i == 0 ? 0 : sums[i - 1];
-        const right = sums[sums.length - 1] - sums[i]; 
+        const left = i === 0 ? 0 : sums[i - 1];
+        const right = sums[sums.length - 1] - sums[i];
         if (left === right) return i;
     }
 

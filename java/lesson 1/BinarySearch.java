@@ -2,7 +2,7 @@ class Solution {
     public int binarySearch(int[] nums, int target) {
         int lo = 0;
         int hi = nums.length - 1;
-        
+
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
             if (nums[mid] > target) { 
@@ -13,7 +13,7 @@ class Solution {
                 return mid;
             }
         }
-        
+
         return -1;
     }
 }
