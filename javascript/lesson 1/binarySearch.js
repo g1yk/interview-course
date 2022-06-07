@@ -1,4 +1,4 @@
-function search(nums, target) {
+function binarySearch(nums, target) {
     let lo = 0;
     let hi = nums.length - 1;
 
