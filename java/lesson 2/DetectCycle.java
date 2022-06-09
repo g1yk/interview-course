@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/linked-list-cycle-ii/
+
 public class Solution {
     public ListNode detectCycle(ListNode head) {
         if (head == null) return null;
@@ -9,7 +11,7 @@ public class Solution {
     }
 
     private ListNode getIntersect(ListNode head) {
-        ListNode slow = head, fast = head;        
+        ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -19,7 +21,7 @@ public class Solution {
     }
     
     private ListNode getCycleStart(ListNode head, ListNode intersect) {
-        ListNode one = head, two = intersect;        
+        ListNode one = head, two = intersect;
         while (one != two) {
             one = one.next;
             two = two.next;

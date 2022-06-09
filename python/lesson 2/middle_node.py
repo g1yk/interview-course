@@ -1,10 +1,10 @@
 from typing import Optional
 from list_node import ListNode
 
+# https://leetcode.com/problems/middle-of-the-linked-list/
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        slow: Optional[ListNode] = head
-        fast: Optional[ListNode] = head
+        slow = fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next

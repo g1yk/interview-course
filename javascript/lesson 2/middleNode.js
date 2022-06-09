@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/middle-of-the-linked-list/
+
 function middleNode(head) {
     let slow = head, fast = head;
     while (fast && fast.next) {
