@@ -1,5 +1,8 @@
+from typing import List
+
+
 class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
+    def pivot_index(self, nums: List[int]) -> int:
         if len(nums) == 0:
             return -1
         

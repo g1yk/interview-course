@@ -2,7 +2,7 @@ from typing import List
 
 
 class Solution:
-    def binarySearchLeft(self, nums: List[int], target: int) -> int:
+    def binary_search_left(self, nums: List[int], target: int) -> int:
         lo, hi = 0, len(nums) - 1
         while lo <= hi:
             mid = lo + (hi - lo) // 2

@@ -3,7 +3,7 @@ from list_node import ListNode
 
 # https://leetcode.com/problems/reverse-linked-list
 class Solution:
-    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def reverse_list(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev = next = None
         current = head
         while current:
