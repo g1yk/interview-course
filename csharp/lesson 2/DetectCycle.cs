@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/linked-list-cycle-ii/
 
-public class Solution {
+public class Solution 
+{
     public ListNode DetectCycle(ListNode head)
     {
         if (head == null) return null;
