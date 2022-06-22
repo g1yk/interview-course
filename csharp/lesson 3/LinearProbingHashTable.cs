@@ -8,7 +8,7 @@ public class LinearProbingHashTable<TKey, TValue> : HashTable<TKey, TValue>
     private TKey?[] keys;
     private TValue?[] values;
 
-    public LinearProbingHashTable(int capacity = INITIAL_CAPACITY) 
+    public LinearProbingHashTable(int capacity = INITIAL_CAPACITY)
     {
         this.count = 0;
         this.capacity = capacity;
@@ -20,7 +20,7 @@ public class LinearProbingHashTable<TKey, TValue> : HashTable<TKey, TValue>
     {
         if (count >= capacity / 2) Resize(2 * capacity);
         int i;
-        for (i = GetHash(key); keys[i] != null; i = (i + 1) % capacity) 
+        for (i = GetHash(key); keys[i] != null; i = (i + 1) % capacity)
         {
             if (keys[i]!.Equals(key)) break;
         }
@@ -28,7 +28,7 @@ public class LinearProbingHashTable<TKey, TValue> : HashTable<TKey, TValue>
         values[i] = val;
         count++;        
     }
-    
+
     public TValue? Get(TKey key) {
         for (var i = GetHash(key); keys[i] != null; i = (i + 1) % capacity)
         {
@@ -36,15 +36,15 @@ public class LinearProbingHashTable<TKey, TValue> : HashTable<TKey, TValue>
         }
         return null;
     }
-    
+
     public void Remove(TKey key) {
         for (var i = GetHash(key); keys[i] != null; i = (i + 1) % capacity) {
-            if (!keys[i]!.Equals(key)) continue;            
+            if (!keys[i]!.Equals(key)) continue;
             keys[i] = null;
             values[i] = null;
             // rehash all keys in same cluster
             i = (i + 1) % capacity;
-            while (!keys[i].Equals(default)) 
+            while (keys[i] != null) 
             {
                 var keyToRehash = keys[i];
                 var valToRehash = values[i];
@@ -59,12 +59,12 @@ public class LinearProbingHashTable<TKey, TValue> : HashTable<TKey, TValue>
         }
         if (count > 0 && count <= capacity / 8) Resize(capacity / 2);
     }
-    
+
     private int GetHash(TKey key) 
     {
         return (key.GetHashCode() & 0x7fffffff) % capacity;
     }
-    
+
     private void Resize(int size) 
     {
         // rehash all keys
