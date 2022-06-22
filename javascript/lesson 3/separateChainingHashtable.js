@@ -56,7 +56,7 @@ class SeparateChainingHashTable {
     _resize(size) {
         const temp = new SeparateChainingHashTable(size);
         for (let i = 0; i < this.capacity; i++) {
-            for (let node = this.buckets[i]; !!node; node = node.next) {
+            for (let node = this.buckets[i]; node != null; node = node.next) {
                 temp.put(node.key, node.value);
             }
         }
