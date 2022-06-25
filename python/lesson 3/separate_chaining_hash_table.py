@@ -17,7 +17,7 @@ class SeparateChainingHashTable:
 
     def put(self, key, value):
         if self.count >= 10 * self.capacity:
-            self.resize(2 * self.capacity)
+            self.__resize(2 * self.capacity)
         i = self.__hash(key)
         node = self.buckets[i]
         while node:
@@ -52,9 +52,9 @@ class SeparateChainingHashTable:
             prev = node
             node = node.next
         if self.capacity > self.INITIAL_CAPACITY and self.count <= 2 * self.capacity:
-            self.resize(self.capacity / 2)
+            self.__resize(self.capacity / 2)
 
-    def resize(self, size: int) -> None:
+    def __resize(self, size: int) -> None:
         temp = SeparateChainingHashTable(size)
         for i in range(self.capacity):
             node = self.buckets[i]
