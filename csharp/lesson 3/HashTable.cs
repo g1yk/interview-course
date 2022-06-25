@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/design-hashmap/
+
 public interface HashTable<TKey, TValue>
     where TKey : struct
     where TValue : struct 

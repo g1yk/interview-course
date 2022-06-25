@@ -1,25 +1,28 @@
+# https://leetcode.com/problems/design-hashmap/
+
 class Node:
     def __init__(self, key, value, nxt):
         self.key = key
         self.value = value
         self.next = nxt
 
+
 class SeparateChainingHashTable:
     INITIAL_CAPACITY = 4
-    
-    def __init__(self, capactiy = INITIAL_CAPACITY):
+
+    def __init__(self, capactiy=INITIAL_CAPACITY):
         self.count = 0
         self.capacity = capactiy
-        self.buckets =  [None for _ in range(self.capacity)]
+        self.buckets = [None for _ in range(self.capacity)]
 
     def put(self, key, value):
-        if self.count >= 10 * self.capacity: 
+        if self.count >= 10 * self.capacity:
             self.resize(2 * self.capacity)
         i = self.__hash(key)
         node = self.buckets[i]
         while node:
             if key == node.key:
-                node.value = value                
+                node.value = value
                 return
             node = node.next
         self.buckets[i] = Node(key, value, self.buckets[i])
@@ -29,7 +32,8 @@ class SeparateChainingHashTable:
         i = self.__hash(key)
         node = self.buckets[i]
         while node:
-            if node.key == key: return node.value
+            if node.key == key:
+                return node.value
             node = node.next
         return None
 
@@ -42,13 +46,13 @@ class SeparateChainingHashTable:
                 if not prev:
                     self.buckets[i] = node.next
                 else:
-                    prev.next = node.next                
+                    prev.next = node.next
                 self.count -= 1
-                break            
+                break
             prev = node
             node = node.next
         if self.capacity > self.INITIAL_CAPACITY and self.count <= 2 * self.capacity:
-            self.resize(self.capacity / 2) 
+            self.resize(self.capacity / 2)
 
     def resize(self, size: int) -> None:
         temp = SeparateChainingHashTable(size)

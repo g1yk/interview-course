@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/design-hashmap/
+
 public class LinearProbingHashTable<Key, Value> implements HashTable<Key, Value> {
     private static final int INITIAL_CAPACITY = 4;
     private int count;
