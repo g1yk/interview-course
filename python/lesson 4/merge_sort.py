@@ -7,7 +7,7 @@ class Solution:
         return nums
 
     def merge_sort(self, nums: List[int]):
-        return self.sort(nums, 0, len(nums) - 1, [0] * len(nums))
+        self.sort(nums, 0, len(nums) - 1, [0] * len(nums))
 
     def sort(self, nums: List[int], lo: int, hi: int, temp: List[int]):
         if hi <= lo: return

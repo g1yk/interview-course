@@ -13,7 +13,7 @@ class SeparateChainingHashTable:
     def __init__(self, capactiy=INITIAL_CAPACITY):
         self.count = 0
         self.capacity = capactiy
-        self.buckets = [None for _ in range(self.capacity)]
+        self.buckets = [None] * self.capacity
 
     def put(self, key, value):
         if self.count >= 10 * self.capacity:

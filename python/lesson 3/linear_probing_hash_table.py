@@ -6,8 +6,8 @@ class LinearProbingHashTable:
     def __init__(self, capactiy=INITIAL_CAPACITY):
         self.count = 0
         self.capacity = capactiy
-        self.keys = [None for _ in range(self.capacity)]
-        self.values = [None for _ in range(self.capacity)]
+        self.keys = [None] * self.capacity
+        self.values = [None] * self.capacity
 
     def put(self, key, value):
         if self.count >= self.capacity / 2:
