@@ -4,6 +4,7 @@ function sortArray(nums) {
     quickSort(nums);
     return nums;
 }
+
 function quickSort(nums) {
     shuffle(nums);
     sort(nums, 0, nums.length - 1);
@@ -21,8 +22,8 @@ function partition(nums, lo, hi) {
     let i = lo;
     let j = hi + 1;
     while (true) {
-        while (nums[++i] < pivot && i < hi) {}
-        while (nums[--j] > pivot && j > lo) {}
+        while (nums[++i] < pivot && i < hi);
+        while (nums[--j] > pivot && j > lo);
         if (i >= j) break;
         swap(nums, i, j);
     }

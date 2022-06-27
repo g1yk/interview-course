@@ -1,15 +1,16 @@
 // https://leetcode.com/problems/sort-an-array/
+
 public class Solution
 {
     public int[] SortArray(int[] nums)
     {
-        QuickSort (nums);
+        QuickSort(nums);
         return nums;
     }
 
     private void QuickSort(int[] nums)
     {
-        Shuffle (nums);
+        Shuffle(nums);
         Sort(nums, 0, nums.Length - 1);
     }
 
@@ -30,9 +31,9 @@ public class Solution
             while (nums[++i] < pivot && i < hi);
             while (nums[--j] > pivot && j > lo);
             if (i >= j) break;
-            Swap (nums, i, j);
+            Swap(nums, i, j);
         }
-        Swap (nums, lo, j);
+        Swap(nums, lo, j);
         return j;
     }
 
@@ -49,7 +50,7 @@ public class Solution
         for (int i = 0; i < nums.Length; i++)
         {
             int r = random.Next(i + 1);
-            Swap (nums, i, r);
+            Swap(nums, i, r);
         }
     }
 }
