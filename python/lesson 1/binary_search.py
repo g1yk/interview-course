@@ -1,6 +1,6 @@
 from typing import List
 
-
+# https://leetcode.com/problems/binary-search
 class Solution:
     def binary_search(self, nums: List[int], target: int) -> int:
         lo, hi = 0, len(nums) - 1

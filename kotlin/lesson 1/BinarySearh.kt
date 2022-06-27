@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/binary-search
+
 class Solution {
     fun binarySearch(nums: IntArray, target: Int): Int {
         var lo = 0

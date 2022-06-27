@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/binary-search
+
 def binary_search(nums, target)
     lo = 0
     hi = nums.length - 1
