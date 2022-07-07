@@ -33,7 +33,7 @@ class Solution {
         nums[a] = nums[b].also { nums[b] = nums[a] }
     }
 
-    fun shuffle(nums: IntArray) {
+    private fun shuffle(nums: IntArray) {
         for (i in nums.indices) {
             val r = (0 until i + 1).random()
             swap(nums, i, r)
