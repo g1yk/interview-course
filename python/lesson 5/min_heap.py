@@ -1,7 +1,3 @@
-import random
-from typing import List
-
-
 class MinHeap:
     def __init__(self, capacity: int):
         self.items = [None] * (capacity + 1)

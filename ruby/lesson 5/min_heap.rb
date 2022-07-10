@@ -4,7 +4,7 @@ class MinHeap
         @count = 0
     end
 
-    def size()
+    def size
         @count
     end
 
@@ -14,7 +14,7 @@ class MinHeap
         swim(@count)
     end
 
-    def poll()
+    def poll
         result = @items[1]
         swap(1, @count)
         @count -= 1
@@ -23,16 +23,16 @@ class MinHeap
     end
 
     def swim(k)
-        while k > 1 and self.greater(k / 2, k) do
+        while k > 1 and self.greater(k / 2, k)
             swap(k / 2, k)
             k = k / 2
         end
     end
 
     def sink(k)
-        while 2 * k <= @count do
+        while 2 * k <= @count
             j = 2 * k
-            j += 1 if j < @count && greater(j, j + 1)                
+            j += 1 if j < @count && greater(j, j + 1)
             break if not greater(k, j)
                 
             swap(k, j)
