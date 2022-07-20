@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
 
 function inorderTraversal(root) {
-    result = [];
+    const result = [];
     inOrder(root, result);
     return result;
 }
