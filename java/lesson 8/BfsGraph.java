@@ -2,14 +2,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BfsGraph {
-    public void bfs(Graph graph) {
+    public void bfs(DirectedGraph graph) {
         boolean[] visited = new boolean[graph.size()];
         for (int v = 0; v < graph.size(); v++) {
             if (!visited[v]) bfs(graph, v, visited);
         }
     }
 
-    private void bfs(Graph graph, int start, boolean[] visited) {
+    private void bfs(DirectedGraph graph, int start, boolean[] visited) {
         Queue<Integer> queue = new LinkedList<Integer>();
         
         visited[start] = true;
