@@ -1,5 +1,5 @@
 import collections
-from heapq import heappop, heappush, heappushpop
+from heapq import heappop, heappush
 from typing import List
 
 # https://leetcode.com/problems/kth-largest-element-in-an-array
