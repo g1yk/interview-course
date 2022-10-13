@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/shuffle-an-array/
 
 class Solution {
-    public static void shuffle(int[] values) {
+    public void shuffle(int[] values) {
         Random random = new Random();
         for (int i = 0; i < values.length; i++) {
             int r = random.nextInt(i + 1);
