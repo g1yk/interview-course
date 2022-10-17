@@ -7,13 +7,12 @@ public class Examples {
         return result;
     }
 
-    public int countZeroSumNotOptimized(int[] nums) {
-        int result = 0;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
-                if (nums[i] + nums[j] == 0)
-                    result++;
-            }
+    public int[][] buildMatrix(int rows, int cols) {      
+        int[][] result = new int[rows][cols];
+        for (int row = 0; row < rows; row++) {  
+            for (int col = 0; col < cols; col++) {  
+                result[row][col] = (row + 1) * (col + 1);
+            }  
         }
         return result;
     }

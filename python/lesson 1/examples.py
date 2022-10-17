@@ -5,12 +5,12 @@ class Examples:
             result += nums[i]
         return result
 
-    def countZeroSumNotOptimized(self, nums: List[int]) -> int:
-        result = 0
-        for i in range(len(nums)):
-            for j in range(i + 1, len(nums)):        
-                if nums[i] + nums[j] == 0:
-                    result += 1        
+    def buildMatrix(self, rows: int, cols: int) -> List[List[int]]:
+        result = [None] * rows
+        for row in range(rows):
+            result[row] = [None] * cols
+            for col in range(cols):
+                result[row][col] = (row + 1) * (col + 1)                
         return result
 
     def sumRecursive(self, nums: List[int]) -> int:

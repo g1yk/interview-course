@@ -10,15 +10,15 @@ public class Examples
         return result;
     }
 
-    public int CountZeroSumNotOptimized(int[] nums)
+    public int[][] BuildMatrix(int rows, int cols)
     {
-        int result = 0;
-        for (int i = 0; i < nums.Length; i++)
-        {
-            for (int j = i + 1; j < nums.Length; j++)
+        var result = new int[rows][];
+        for (int row = 0; row < rows; row++)
+        {  
+            result[row] = new int[cols];
+            for (int col = 0; col < cols; col++)
             {
-                if (nums[i] + nums[j] == 0)
-                    result++;
+                result[row][col] = (row + 1) * (col + 1);
             }
         }
         return result;

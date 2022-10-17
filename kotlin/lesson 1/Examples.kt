@@ -7,13 +7,12 @@ public class Examples {
         return result
     }
 
-    fun countZeroSumNotOptimized(nums: IntArray): Int {
-        var result = 0
-        for (i in nums.indices) {
-            for (j in i + 1 until nums.size) {
-                if (nums[i] + nums[j] == 0)
-                    result++
-            }
+    fun buildMatrix(rows: Int, cols: Int): Array<IntArray> {
+        val result = Array(rows) { IntArray(cols) }
+        for (row in 0 until rows) {
+            for (col in 0 until cols) {
+                result[row][col] = (row + 1) * (col + 1)
+            }  
         }
         return result
     }

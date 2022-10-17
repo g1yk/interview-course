@@ -6,13 +6,13 @@ function sum(nums) {
     return result;
 }
 
-function countZeroSumNotOptimized(nums) {
-    let result = 0;
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] + nums[j] == 0)
-                result++;
-        }
+function buildMatrix(rows, cols) {      
+    const result = [];
+    for (let row = 0; row < rows; row++) {  
+        result[row] = [];
+        for (let col = 0; col < cols; col++) {  
+            result[row][col] = (row + 1) * (col + 1);
+        }  
     }
     return result;
 }

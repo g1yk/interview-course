@@ -4,12 +4,13 @@ def sum(nums)
     result
 end
 
-def count_zero_sum_not_optimized(nums)
-    result = 0
-    (0..nums.length - 1).each do |i| 
-        (i + 1..nums.length - 1).each do |j|
-            result += 1 if nums[i] + nums[j] == 0
-        end        
+def build_matrix(rows, cols)
+    result = Array.new(rows)
+    (0..rows - 1).each do |row|
+        result[row] = Array.new(cols)
+        (0..cols - 1).each do |col|
+            result[row][col] = (row + 1) * (col + 1)
+        end 
     end
     result
 end
